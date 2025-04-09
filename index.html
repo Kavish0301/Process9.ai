@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process9.ai - Your Financial Language Model</title>
+    <meta name="description"
+        content="MoxFina: Custom AI built for banks, insurance, and fintech. Secure. Compliant. Domain-Ready.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Decorative circles with animations -->
+        <div class="circle-large bg-primary-blue float-slow hidden-mobile"></div>
+        <div class="circle-small bg-light-blue float-medium"></div>
+        <div class="circle-small bg-primary-orange float-fast hidden-mobile"></div>
+        <div class="circle-tiny bg-light-blue float-medium"></div>
+        <div class="circle-medium bg-primary-blue float-slow"></div>
+        <div class="circle-tiny bg-primary-orange float-fast"></div>
+        <div class="circle-medium bg-light-blue float-medium hidden-mobile"></div>
+        <div class="circle-tiny bg-light-blue float-fast"></div>
+        <div class="circle-small bg-primary-orange float-slow hidden-mobile"></div>
+
+        <!-- Animated background particles -->
+        <div id="particles-js" class="particles"></div>
+
+        <div class="content">
+            <!-- Header with logo -->
+            <header class="fade-in">
+                <div class="logo-container">
+                    <img src="logo.png" alt="Process 9 Logo" class="logo animate-flip">
+                </div>
+            </header>
+
+            <!-- Hero Section -->
+            <main id="home" class="hero fade-in">
+                <div class="hero-content animate-scale">
+                    <div class="hero-text">
+                        <h1 class="text-reveal">Process9.ai - <br>Your Partner For Custom Language Models </h1>
+                    </div>
+                    <p class="hero-subtitle slide-up"><b>Custom AI built for banks, insurance, and fintech.</b></p>
+                    <p class="hero-subtitle bold slide-up" style="animation-delay: 0.3s;">Secure. Compliant.
+                        Domain-Ready.</p>
+                    <div class="button-container slide-up" style="animation-delay: 0.6s;">
+                        <a href="#contact" class="button primary float-button glow-effect">Get Started</a>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="chevron-down">
+                        <path d="m6 9 6 6 6-6" />
+                    </svg>
+                </div>
+            </main>
+
+            <!-- Introduction Section -->
+            <section id="intro" class="section intro fade-in">
+                <div class="section-header shimmer animate-scale">
+                    <h2 class="text-gradient">Introducing Process9.ai's <br>Custom Language Models For The BFSI Industry
+                    </h2>
+                </div>
+
+                <p class="section-text slide-up">
+                    Process9.ai now offers a Custom Language Model (CLM) made exclusively for the financial industry.
+                    These models are fine-tuned on BFSI industry data, trained to understand financial terminology,
+                    customer intents, compliance needs, and operational context.
+                </p>
+
+                <div class="feature-box animate-border">
+                    <h3 class="bounce-in">Unlike generic LLMs, Process9.ai models:</h3>
+
+                    <div class="feature-grid">
+                        <div class="feature-item fade-in-left">
+                            <div class="feature-icon check animate-pulse">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <p>Recognize industry-specific terms <br><i>("NAV" is Net Asset Value, not 'navigation')</i>
+                            </p>
+                        </div>
+
+                        <div class="feature-item fade-in-right" style="transition-delay: 0.2s;">
+                            <div class="feature-icon check animate-pulse">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <p>Integrate with your ERP, CRM, and internal systems</p>
+                        </div>
+
+                        <div class="feature-item fade-in-left" style="transition-delay: 0.4s;">
+                            <div class="feature-icon check animate-pulse">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <p>Maintain data privacy, sovereignty, and localization</p>
+                        </div>
+
+                        <div class="feature-item fade-in-right" style="transition-delay: 0.6s;">
+                            <div class="feature-icon check animate-pulse">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <p>Comply with <b>GDPR, DPDPA</b></p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="section-text slide-up">
+                    Whether it's customer services, sentiment analysis, intelligent automation, fraud detection, or
+                    business reporting - Process9.ai delivers scalability, reliability, and security.
+                </p>
+            </section>
+
+            <!-- Why Generic LLMs Section -->
+            <section id="why" class="section why fade-in">
+                <div class="section-header animate-scale">
+                    <h2 class="text-gradient">Why Generic LLMs Just Don't Cut It For Finance ?</h2>
+                </div>
+                <p class="section-text slide-up">
+                    Generic LLMs are built for the masses - not for sensitive, high-stakes financial workflows.
+                </p>
+
+                <div class="blue-box tilt-on-scroll">
+                    <h3 class="bounce-in">Process9.ai Solves This By:</h3>
+
+                    <div class="solution-grid">
+                        <div class="solution-item zoom-in">
+                            <div class="solution-icon rotating">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Embedding domain knowledge</h4>
+                                <p>Incorporating company-specific data and financial expertise</p>
+                            </div>
+                        </div>
+
+                        <div class="solution-item zoom-in" style="transition-delay: 0.2s;">
+                            <div class="solution-icon rotating">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Reducing hallucinations</h4>
+                                <p>Eliminating off-context answers in critical financial contexts</p>
+                            </div>
+                        </div>
+
+                        <div class="solution-item zoom-in" style="transition-delay: 0.4s;">
+                            <div class="solution-icon rotating">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Enhancing understanding</h4>
+                                <p>Better comprehension of nuanced financial queries and intents</p>
+                            </div>
+                        </div>
+
+                        <div class="solution-item zoom-in" style="transition-delay: 0.6s;">
+                            <div class="solution-icon rotating">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Full data control</h4>
+                                <p>On-premises or private deployments for maximum security</p>
+                            </div>
+                        </div>
+                        <div class="solution-item zoom-in" style="transition-delay: 0.4s;">
+                            <div class="solution-icon rotating">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Support & Management</h4>
+                                <p>Deployment, on-going training, scaling, end-to-end management and support</p>
+                            </div>
+                        </div>
+                        <div class="solution-item zoom-in" style="transition-delay: 0.4s;">
+                            <div class="solution-icon rotating">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Cost Factor</h4>
+                                <p>At a fraction of the cost of generic LLM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Use Cases Section -->
+            <section id="use-cases" class="section use-cases fade-in">
+                <div class="section-header animate-scale">
+                    <h2 class="text-gradient">Supercharge Your Business With Process9.ai</h2>
+                </div>
+                <p class="section-text slide-up">
+                    Whether you’re a bank, insurer, or fintech platform - Process9.ai’s CLMs are your <b>agentic AI</b>
+                    workhorses that learn, adapt, and grow with your business.
+                </p>
+
+                <div class="use-case-grid">
+                    <div class="use-case-card card-hover flip-card" style="transition-delay: 0s;">
+                        <div class="use-case-icon pulse">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3>Multilingual Support</h3>
+                        <p>Deliver context-aware customer support across languages</p>
+                    </div>
+
+                    <div class="use-case-card card-hover flip-card" style="transition-delay: 0.1s;">
+                        <div class="use-case-icon pulse">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <h3>Fraud Detection</h3>
+                        <p>Automate compliance monitoring and fraud prevention</p>
+                    </div>
+
+                    <div class="use-case-card card-hover flip-card" style="transition-delay: 0.2s;">
+                        <div class="use-case-icon pulse">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                            </svg>
+                        </div>
+                        <h3>Data Insights</h3>
+                        <p>Extract insights from operational data & logs</p>
+                    </div>
+
+                    <div class="use-case-card card-hover flip-card" style="transition-delay: 0.3s;">
+                        <div class="use-case-icon pulse">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </div>
+                        <h3>Custom Reports</h3>
+                        <p>Generate customized reports and summaries</p>
+                    </div>
+
+                    <div class="use-case-card card-hover flip-card" style="transition-delay: 0.4s;">
+                        <div class="use-case-icon pulse">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3>Personalized UX</h3>
+                        <p>Power personalized user interactions</p>
+                    </div>
+
+                    <div class="use-case-card card-hover flip-card" style="transition-delay: 0.5s;">
+                        <div class="use-case-icon pulse">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                            </svg>
+                        </div>
+                        <h3>Intelligent Automation</h3>
+                        <p>Enable automation across departments</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section contact fade-in">
+                <div class="contact-box tilt-on-scroll">
+                    <h2 class="bounce-in">Ready To Scale Your AI Strategy?
+                    </h2>
+                    <p class="slide-up">Let's build your own private, secure, and intelligent Custom Language Model.</p>
+
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-emoji">📩</span>
+                            <a href="mailto:info@process9.com" class="hover-underline"><b>info@process9.com</b></a>
+                        </div>
+
+                        <!-- <div class="contact-item">
+                            <span class="contact-emoji">🌐</span>
+                            <a href="https://www.process9.com" target="_blank" rel="noopener noreferrer"
+                                class="hover-underline">www.process9.com</a>
+                        </div> -->
+                    </div>
+
+                    <a href="#" class="button primary glow-effect">Contact Us</a>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer fade-in">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Process 9 Logo" class="logo-small animate-flip">
+                </div>
+
+                <p class="footer-tagline text-gradient">Process9.ai <br>Your Partner For Custom Language Models </p>
+
+
+
+                <div class="footer-links">
+                    <a href="#home" class="hover-underline">Home</a>
+                    <a href="#intro" class="hover-underline">Introduction</a>
+                    <a href="#why" class="hover-underline">Why MoxFina</a>
+                    <a href="#use-cases" class="hover-underline">Use Cases</a>
+                    <a href="#contact" class="hover-underline">Contact</a>
+                </div>
+
+                <div class="footer-info">
+                    <p>📍 Made in India. Built for the world.</p>
+                    <p>&copy; 2024 Process9. All rights reserved.</p>
+                </div>
+            </footer>
+
+            <!-- Navigation Bar -->
+            <div class="nav-container">
+                <nav class="main-nav">
+                    <!-- Mobile menu button - only visible on smallest screens -->
+                    <div class="mobile-menu-toggle">
+                        <button id="mobile-menu-toggle">
+                            Menu
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="menu-icon">
+                                <path d="m18 15-6-6-6 6"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="nav-brand">
+                        <img src="logo.png" alt="Process 9 Logo" class="nav-logo">
+                    </div>
+
+                    <!-- Navigation items - will be toggled on smallest screens -->
+                    <div id="nav-items" class="nav-items">
+                        <a href="#intro" class="hover-underline">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="up-icon">
+                                <path d="m18 15-6-6-6 6"></path>
+                            </svg>
+                            Introduction
+                        </a>
+                        <a href="#why" class="hover-underline">Why MoxFina</a>
+                        <a href="#use-cases" class="hover-underline">Use Cases</a>
+                    </div>
+
+                    <a href="#contact" class="nav-contact-button">Contact Us</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Particles.js for background animation -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
