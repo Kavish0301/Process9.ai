@@ -827,7 +827,7 @@ h4 {
     background: linear-gradient(90deg, var(--primary-blue), var(--primary-orange));
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent;
+    /* color: transparent; */
 }
 
 /* Company name container and inline logo */
@@ -849,6 +849,8 @@ h4 {
     height: auto;
     width: 80px;
     transition: transform 0.3s ease;
+    position: relative;
+    top: 3.3px;
 }
 
 .nav-logo:hover {
