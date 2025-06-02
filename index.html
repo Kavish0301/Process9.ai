@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Google Font: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -35,6 +36,32 @@
                     <img src="logo.png" alt="Process 9 Logo" class="logo animate-flip">
                 </div>
             </header>
+            <!-- Open Popup Button -->
+            <button id="openLangPopup" style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+                <img src="images/language.png" alt="" height="20px" width="20px">
+                Select Language
+            </button>
+
+
+            <div id="langPopup" class="popup-overlay" style="display: none;">
+                <div class="popup-content">
+                    <a href="https://www.flaticon.com/free-icons/extensible-markup-language"
+                        title="extensible markup language icons"></a>
+                    <span id="closeLangPopup" class="close-btn">&times;</span>
+
+                    <h3>Select Your Language</h3>
+                    <div id="languageList" class="language-list">
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="language-popup">
+                <p id="language-message"></p>
+                <button onclick="switchLanguage()">Switch Language</button>
+            </div>
+
+
 
             <!-- Hero Section -->
             <main id="home" class="hero fade-in">
