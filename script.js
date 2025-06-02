@@ -307,50 +307,18 @@ function removeMoxCookie(o) {
 }
 
 var langCodeList = "english,hindi,french,german,tamil,gujarati,bengali,marathi,telugu,kannada,malayalam,punjabi".split(",");
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     var savedLang = getMoxCookie("lang");
-//     var currentPath = window.location.pathname.split("/")[1]; // e.g., "hindi", "french"
-
+s
 //     // Redirect only if saved language exists, and we're not already on that path
-//     // if (savedLang && savedLang !== "english" && currentPath !== savedLang) {
-//     //     RedirectUrl(savedLang);
-//     // }
+    if (savedLang && savedLang !== "english" && currentPath !== savedLang) {
+        RedirectUrl(savedLang);
+    }
 
 //     // Optional: if currentPath is a valid language, update the cookie
-//     if (langCodeList.includes(currentPath)) {
-//         setMoxCookie("lang", currentPath);
-//     }
-// });
+    if (langCodeList.includes(currentPath)) {
+        setMoxCookie("lang", currentPath);
+    }
+});
 
-// Add this to your existing JavaScript (replace any duplicate language detection code)
-// const regionToLanguage = {
-//     'IN-DL': 'Hindi',
-//     'IN-TN': 'Tamil',
-//     'IN-KA': 'Kannada',
-//     'IN-MH': 'Marathi',
-//     'IN': 'Hindi',
-//     'FR': 'French',
-//     'ES': 'Spanish'
-// };
-
-// async function getUserRegion() {
-//     try {
-//         const res = await fetch('https://ipapi.co/json/');
-//         const data = await res.json();
-
-//         const country = data.country;         // e.g. "IN"
-//         const regionCode = data.region_code;  // e.g. "DL"
-//         const regionKey = `${country}-${regionCode}`; // e.g. "IN-DL"
-
-//         console.log("Location:", regionKey, "(fallback:", country + ")");
-
-//         return { regionKey, country };
-//     } catch (err) {
-//         console.error('❌ Geolocation failed:', err);
-//         return null;
-//     }
-// }
 const regionToLanguage = {
     'IN-DL': 'Hindi',
     'IN-TN': 'Tamil',
