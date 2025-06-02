@@ -211,3 +211,211 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+// Open and Close Popup
+document.getElementById("openLangPopup").addEventListener("click", () => {
+    document.getElementById("langPopup").style.display = "flex";
+});
+
+var langCodeList = "english,hindi,french,german,tamil,gujarati,bengali,marathi,telugu,kannada,malayalam,punjabi".split(",");
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Create language buttons dynamically
+    var langContainer = document.getElementById("languageList");
+    langCodeList.forEach(function (lang) {
+        var btn = document.createElement("button");
+        btn.className = "lang-btn";
+        btn.dataset.lang = lang;
+        btn.textContent = lang.charAt(0).toUpperCase() + lang.slice(1);
+        langContainer.appendChild(btn);
+    });
+
+    // Attach click listeners
+    document.querySelectorAll(".lang-btn").forEach(function (button) {
+        button.addEventListener("click", function () {
+            var selectedLang = this.dataset.lang;
+            setMoxCookie("lang", selectedLang);
+            RedirectUrl(selectedLang);
+        });
+    });
+
+    // Close popup
+    document.getElementById("closeLangPopup").addEventListener("click", function () {
+        document.getElementById("langPopup").style.display = "none";
+    });
+
+    // Optional: open popup (you can trigger this based on your logic)
+    // document.getElementById("langPopup").style.display = "block";
+});
+
+
+// Language Functions (same as your original)
+// function RedirectUrl(lang) {
+//     // Extract hostname parts (e.g., www.process9.ai → ['www', 'process9', 'ai'])
+//     var hostParts = window.location.hostname.split(".");
+
+//     // Check if there's a "www" or subdomain (3 parts or more)
+//     var hasSubdomain = hostParts.length > 2;
+
+//     // If there's a subdomain like "www" or "hindi", remove it
+//     if (hasSubdomain) {
+//         hostParts = hostParts.slice(-2); // Keep only base domain, e.g., ['process9', 'ai']
+//     }
+
+//     var baseDomain = hostParts.join("."); // e.g., "process9.ai"
+
+//     // Construct the final URL
+//     var targetUrl = lang === "english"
+//         ? "https://www." + baseDomain
+//         : "https://" + lang + "." + baseDomain;
+
+//     // Redirect
+//     window.location.href = targetUrl;
+// }
+function RedirectUrl(lang) {
+    // Always use base domain for testing/production
+    const baseDomain = "process9.ai";
+
+    // Construct URL based on language
+    const targetUrl = lang === "english"
+        ? `https://www.${baseDomain}`
+        : `https://${lang}.${baseDomain}`;
+
+    // Redirect
+    window.location.href = targetUrl;
+}
+
+
+
+// function RedirectUrl(lang) {
+//     var baseUrl = "https://process9.ai";
+//     var targetUrl = lang === "english" ? "/" : "/" + lang + "/";
+//     window.location.href = baseUrl + targetUrl;
+// }
+
+function setMoxCookie(o, n) {
+    document.cookie = o + "=" + n + "; path=/;";
+}
+
+function getMoxCookie(o) {
+    var n = document.cookie.match("(^|;) ?" + o + "=([^;]*)(;|$)");
+    return n ? n[2] : null;
+}
+
+function removeMoxCookie(o) {
+    document.cookie = o + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
+
+var langCodeList = "english,hindi,french,german,tamil,gujarati,bengali,marathi,telugu,kannada,malayalam,punjabi".split(",");
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     var savedLang = getMoxCookie("lang");
+//     var currentPath = window.location.pathname.split("/")[1]; // e.g., "hindi", "french"
+
+//     // Redirect only if saved language exists, and we're not already on that path
+//     // if (savedLang && savedLang !== "english" && currentPath !== savedLang) {
+//     //     RedirectUrl(savedLang);
+//     // }
+
+//     // Optional: if currentPath is a valid language, update the cookie
+//     if (langCodeList.includes(currentPath)) {
+//         setMoxCookie("lang", currentPath);
+//     }
+// });
+
+// Add this to your existing JavaScript (replace any duplicate language detection code)
+// const regionToLanguage = {
+//     'IN-DL': 'Hindi',
+//     'IN-TN': 'Tamil',
+//     'IN-KA': 'Kannada',
+//     'IN-MH': 'Marathi',
+//     'IN': 'Hindi',
+//     'FR': 'French',
+//     'ES': 'Spanish'
+// };
+
+// async function getUserRegion() {
+//     try {
+//         const res = await fetch('https://ipapi.co/json/');
+//         const data = await res.json();
+
+//         const country = data.country;         // e.g. "IN"
+//         const regionCode = data.region_code;  // e.g. "DL"
+//         const regionKey = `${country}-${regionCode}`; // e.g. "IN-DL"
+
+//         console.log("Location:", regionKey, "(fallback:", country + ")");
+
+//         return { regionKey, country };
+//     } catch (err) {
+//         console.error('❌ Geolocation failed:', err);
+//         return null;
+//     }
+// }
+const regionToLanguage = {
+    'IN-DL': 'Hindi',
+    'IN-TN': 'Tamil',
+    'IN-KA': 'Kannada',
+    'IN-MH': 'Marathi',
+    'IN': 'Hindi',
+    'FR': 'French',
+    'ES': 'Spanish'
+};
+
+let selectedLanguage = null; // 👈 Global variable to store detected language
+
+async function getUserRegion() {
+    try {
+        const res = await fetch('https://ipapi.co/json/');
+        const data = await res.json();
+
+        const country = data.country;         // e.g. "IN"
+        const regionCode = data.region_code;  // e.g. "DL"
+        const regionKey = `${country}-${regionCode}`; // e.g. "IN-DL"
+
+        console.log("Location:", regionKey, "(fallback:", country + ")");
+
+        // Try region-specific match first
+        if (regionToLanguage[regionKey]) {
+            selectedLanguage = regionToLanguage[regionKey];
+        } else if (regionToLanguage[country]) {
+            selectedLanguage = regionToLanguage[country];
+        }
+
+        return selectedLanguage;
+    } catch (err) {
+        console.error('❌ Geolocation failed:', err);
+        return null;
+    }
+}
+
+function showPopup(language) {
+    const popup = document.getElementById('language-popup');
+    const message = document.getElementById('language-message');
+    message.textContent = `This site is also available in ${language}. Do you want to switch?`;
+    popup.style.display = 'block';
+
+    setTimeout(() => {
+        popup.style.display = 'none';
+    }, 5000);
+}
+
+function switchLanguage() {
+    if (typeof RedirectUrl === 'function') {
+        if (selectedLanguage) {
+            RedirectUrl(selectedLanguage); // ✅ Pass detected language
+        } else {
+            console.warn('No language selected to redirect.');
+        }
+    } else {
+        console.warn('RedirectUrl() is not defined');
+    }
+}
+
+window.addEventListener('DOMContentLoaded', async () => {
+    const language = await getUserRegion();
+    if (language) {
+        showPopup(language);
+    } else {
+        console.log('🌍 No matching language for your region or country');
+    }
+});
