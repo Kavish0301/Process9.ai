@@ -307,17 +307,22 @@ function removeMoxCookie(o) {
 }
 
 var langCodeList = "english,hindi,french,german,tamil,gujarati,bengali,marathi,telugu,kannada,malayalam,punjabi".split(",");
-s
-//     // Redirect only if saved language exists, and we're not already on that path
+
+document.addEventListener("DOMContentLoaded", function () {
+    var savedLang = getMoxCookie("lang");
+    var currentPath = window.location.pathname.split("/")[1]; // e.g., "hindi", "french"
+
+    // Redirect only if saved language exists, and we're not already on that path
     if (savedLang && savedLang !== "english" && currentPath !== savedLang) {
         RedirectUrl(savedLang);
     }
 
-//     // Optional: if currentPath is a valid language, update the cookie
+    // Optional: if currentPath is a valid language, update the cookie
     if (langCodeList.includes(currentPath)) {
         setMoxCookie("lang", currentPath);
     }
 });
+
 
 const regionToLanguage = {
     'IN-DL': 'Hindi',
