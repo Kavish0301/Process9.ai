@@ -310,16 +310,16 @@ var langCodeList = "english,hindi,french,german,tamil,gujarati,bengali,marathi,t
 
 document.addEventListener("DOMContentLoaded", function () {
     var savedLang = getMoxCookie("lang");
-    var currentPath = window.location.pathname.split("/")[1]; // e.g., "hindi", "french"
 
-    // Redirect only if saved language exists, and we're not already on that path
-    if (savedLang && savedLang !== "english" && currentPath !== savedLang) {
+    var subdomain = window.location.hostname.split('.')[0]; // "hindi", "german", "www"
+    var currentLang = langCodeList.includes(subdomain) ? subdomain : "english";
+
+    // Update cookie to reflect current subdomain
+    setMoxCookie("lang", currentLang);
+
+    // Redirect if cookie is different and user is on www
+    if (savedLang && savedLang !== currentLang && currentLang === "english") {
         RedirectUrl(savedLang);
-    }
-
-    // Optional: if currentPath is a valid language, update the cookie
-    if (langCodeList.includes(currentPath)) {
-        setMoxCookie("lang", currentPath);
     }
 });
 
