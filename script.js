@@ -273,6 +273,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //     window.location.href = targetUrl;
 // }
 function RedirectUrl(lang) {
+    debugger
     // Always use base domain for testing/production
     const baseDomain = "process9.ai";
 
@@ -309,24 +310,19 @@ function removeMoxCookie(o) {
 var langCodeList = "english,hindi,french,german,tamil,gujarati,bengali,marathi,telugu,kannada,malayalam,punjabi".split(",");
 
 document.addEventListener("DOMContentLoaded", function () {
-    const savedLang = getMoxCookie("lang");
-    const subdomain = window.location.hostname.split('.')[0];
-    const currentLang = langCodeList.includes(subdomain) ? subdomain : "english";
+    var savedLang = getMoxCookie("lang");
 
-    // ✅ 1. If on "www" (or non-language subdomain) and user has a savedLang → redirect
-    if (!langCodeList.includes(subdomain) && savedLang) {
+    var subdomain = window.location.hostname.split('.')[0]; // "hindi", "german", "www"
+    var currentLang = langCodeList.includes(subdomain) ? subdomain : "english";
+    debugger
+    // Update cookie to reflect current subdomain
+    setMoxCookie("lang", currentLang);
+
+    // Redirect if cookie is different and user is on www
+    if (savedLang && savedLang !== currentLang && currentLang === "english") {
         RedirectUrl(savedLang);
-        return;
-    }
-
-    // ✅ 2. If user is on a language subdomain and it's different from the cookie → update cookie
-    if (savedLang !== currentLang) {
-        setMoxCookie("lang", currentLang);
     }
 });
-
-
-
 
 const regionToLanguage = {
     'IN-DL': 'Hindi',
